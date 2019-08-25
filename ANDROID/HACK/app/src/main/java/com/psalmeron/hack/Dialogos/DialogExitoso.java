@@ -1,11 +1,7 @@
-package com.psalmeron.hack.menus;
+package com.psalmeron.hack.Dialogos;
 
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,20 +10,9 @@ import android.widget.TextView;
 
 import com.psalmeron.hack.R;
 
-public class Divisas extends AppCompatActivity {
+public class DialogExitoso extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_divisas);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-    }
-
-    public void compraDivisa(View v){
-        showCustomDialog("Se generó la referencia de compra con el ID 13231323132");
-    }
+    public DialogExitoso(){};
 
     public void showCustomDialog(String texto) {
         //before inflating the custom alert dialog layout, we will get the current activity viewgroup
@@ -58,5 +43,4 @@ public class Divisas extends AppCompatActivity {
             }
         });
     }
-
 }

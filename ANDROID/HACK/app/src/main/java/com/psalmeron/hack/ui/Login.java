@@ -50,7 +50,6 @@ public class Login extends AppCompatActivity {
     public void nuevoRegistro(View v){
         Intent r = new Intent(this, Registro.class);
         startActivity(r);
-        this.finish();
     }
 
     public void iniciaSesion(View v){

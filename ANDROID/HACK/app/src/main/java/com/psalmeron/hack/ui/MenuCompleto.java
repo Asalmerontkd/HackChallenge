@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.psalmeron.hack.R;
 import com.psalmeron.hack.Splash;
 import com.psalmeron.hack.listener.RecyclerItemClickListener;
+import com.psalmeron.hack.menus.Divisas;
 import com.psalmeron.hack.menus.Menu;
 import com.psalmeron.hack.menus.MenuAdapter;
 import com.psalmeron.hack.ui.operaciones.EnvioDirigido;
@@ -72,9 +73,13 @@ public class MenuCompleto extends AppCompatActivity {
                                 Intent env = new Intent(MenuCompleto.this, EnvioDirigido.class);
                                 startActivity(env);
                                 break;
-                            case 8:
-                                Intent envi = new Intent(MenuCompleto.this, EnvioDirigido.class);
-                                startActivity(envi);
+                            case 6:
+                                Intent div = new Intent(MenuCompleto.this, Divisas.class);
+                                startActivity(div);
+                                break;
+                            case 7:
+                                Intent nuevoPer = new Intent(MenuCompleto.this, Registro.class);
+                                startActivity(nuevoPer);
                                 break;
                         }
 
@@ -103,8 +108,8 @@ public class MenuCompleto extends AppCompatActivity {
             data.add(new Menu(6,"Divisas", "Compra divisas.", R.drawable.dolar));
         }else{
             data.add(new Menu(7,"Crear perfil", "Agrega tus datos de contacto.", R.drawable.perfil));
-            data.add(new Menu(8, "Envío Dirigido", "Genera un referencia de DineroExpress.", R.drawable.envio));
-            data.add(new Menu(9,"Divisas", "Compra divisas.", R.drawable.dolar));
+            data.add(new Menu(5, "Envío Dirigido", "Genera un referencia de DineroExpress.", R.drawable.envio));
+            data.add(new Menu(6,"Divisas", "Compra divisas.", R.drawable.dolar));
         }
 
 
