@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edt_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -48,7 +48,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_nombre" />
 
     <EditText
         android:id="@+id/edt_ap_materno"
@@ -76,6 +76,8 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:focusable="false"
+        android:clickable="true"
         app:layout_constraintTop_toBottomOf="@+id/edt_ap_materno" />
 
     <EditText
@@ -128,6 +130,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:text="Registrar"
+        android:onClick="validaRegistro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.703"
         app:layout_constraintStart_toStartOf="parent"

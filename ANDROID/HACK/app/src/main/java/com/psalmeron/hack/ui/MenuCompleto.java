@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.psalmeron.hack.R;
+import com.psalmeron.hack.Splash;
 import com.psalmeron.hack.listener.RecyclerItemClickListener;
 import com.psalmeron.hack.menus.Menu;
 import com.psalmeron.hack.menus.MenuAdapter;
@@ -111,4 +112,11 @@ public class MenuCompleto extends AppCompatActivity {
         return data;
     }
 
+    @Override
+    protected void onDestroy() {
+        Intent inicio = new Intent(MenuCompleto.this, Splash.class);
+        startActivity(inicio);
+        super.onDestroy();
+
+    }
 }

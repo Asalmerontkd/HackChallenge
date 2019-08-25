@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -41,6 +45,8 @@ public class FaceDetect extends AppCompatActivity {
     // permission request codes need to be < 256
     private static final int RC_HANDLE_CAMERA_PERM = 2;
 
+    TextView satisfaccion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,14 +54,8 @@ public class FaceDetect extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        satisfaccion = (TextView) findViewById(R.id.txt_satisfaccion);
+
 
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
         mGraphicOverlay = (GraphicOverlay) findViewById(R.id.faceOverlay);
@@ -273,6 +273,24 @@ public class FaceDetect extends AppCompatActivity {
         @Override
         public void onUpdate(FaceDetector.Detections<Face> detectionResults, Face face) {
             mOverlay.add(mFaceGraphic);
+
+            final float felicidad = face.getIsSmilingProbability() * 100;
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if(felicidad < 0.9){
+                        satisfaccion.setText("Niveles de satisfacción bajos: " + felicidad);
+                        satisfaccion.setTextColor(Color.RED);
+                    }else {
+                        satisfaccion.setText("Nivel de satisfacción: " + felicidad);
+                        satisfaccion.setTextColor(Color.GREEN);
+                    }
+                }
+            });
+
+
+
+
             mFaceGraphic.updateFace(face);
         }
 
