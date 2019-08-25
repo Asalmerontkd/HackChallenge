@@ -14,9 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.operaciones.TIcket"
+            android:label="@string/title_activity_ticket"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.operaciones.Operaciones"
+            android:label="@string/title_activity_operaciones"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.operaciones.Cuentas"
+            android:label="@string/title_activity_cuentas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.operaciones.Beneficiarios"
+            android:label="@string/title_activity_beneficiarios"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ui.FaceDetect"
             android:label="Servicio de satisfacción"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".menus.Divisas"
             android:label="Compra de divisas"

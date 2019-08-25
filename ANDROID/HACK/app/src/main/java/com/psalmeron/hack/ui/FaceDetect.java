@@ -278,7 +278,7 @@ public class FaceDetect extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if(felicidad < 1.1){
+                    if(felicidad < 2.0){
                         satisfaccion.setText("Niveles de satisfacción bajos: " + felicidad);
                         satisfaccion.setTextColor(Color.RED);
                     }else {

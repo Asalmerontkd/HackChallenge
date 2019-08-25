@@ -21,7 +21,10 @@ import com.psalmeron.hack.listener.RecyclerItemClickListener;
 import com.psalmeron.hack.menus.Divisas;
 import com.psalmeron.hack.menus.Menu;
 import com.psalmeron.hack.menus.MenuAdapter;
+import com.psalmeron.hack.ui.operaciones.Beneficiarios;
+import com.psalmeron.hack.ui.operaciones.Cuentas;
 import com.psalmeron.hack.ui.operaciones.EnvioDirigido;
+import com.psalmeron.hack.ui.operaciones.Operaciones;
 import com.psalmeron.hack.valores.Variables;
 
 import java.util.ArrayList;
@@ -81,6 +84,18 @@ public class MenuCompleto extends AppCompatActivity {
                                 Intent nuevoPer = new Intent(MenuCompleto.this, Registro.class);
                                 startActivity(nuevoPer);
                                 break;
+                            case 4:
+                                Intent ben = new Intent(MenuCompleto.this, Beneficiarios.class);
+                                startActivity(ben);
+                                break;
+                            case 2:
+                                Intent cue = new Intent(MenuCompleto.this, Cuentas.class);
+                                startActivity(cue);
+                                break;
+                            case 3:
+                                Intent ope = new Intent(MenuCompleto.this, Operaciones.class);
+                                startActivity(ope);
+                                break;
                         }
 
                     }
@@ -100,7 +115,7 @@ public class MenuCompleto extends AppCompatActivity {
     private ArrayList<Menu> dataSet() {
         data = new ArrayList<>();
         if(Variables.isLoged == 1){
-            data.add(new Menu(1,"Mi perfil", "Modifica tus datos de contacto.", R.drawable.perfil));
+            data.add(new Menu(7,"Mi perfil", "Modifica tus datos de contacto.", R.drawable.perfil));
             data.add(new Menu(2,"Cuentas", "Información de cuentas bancarias.", R.drawable.cuentas));
             data.add(new Menu(3,"Consulta Operaciones", "Obten información de ti ticket digital.", R.drawable.operaciones));
             data.add(new Menu(4,"Beneficiarios", "Agrega beneficiarios para en DineroExpress.", R.drawable.beneficiarios));
